@@ -1,4 +1,5 @@
 # Use Node.js for building the app
+# Use Node.js for building the app
 FROM node:18 AS build
 
 WORKDIR /app
@@ -7,9 +8,6 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Use Nginx to serve the built app
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 8080
+# Run the preview server on the correct port
+CMD ["npm", "run", "preview"]
 
-CMD ["nginx", "-g", "daemon off;"]
