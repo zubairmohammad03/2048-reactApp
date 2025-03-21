@@ -4,6 +4,10 @@ import AuthPage from "./pages/Signup";
 import Game from "./pages/Game";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
+import Aboutus from "./pages/Aboutus";
+import Contactus from "./pages/Contactus";
+import Disclaimer from "./pages/Disclaimer";
+import Term from "./pages/Term";
 
 const App = () => {
   return (
@@ -19,6 +23,10 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/contactus" element={<Contactus />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/term" element={<Term />} />
       </Routes>
     </Router>
   );
